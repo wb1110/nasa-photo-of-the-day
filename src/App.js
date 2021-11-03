@@ -6,7 +6,6 @@ import Content from "./components/Content";
 function App() {
   
   const [nasa, setNasa] = useState();
-  const axios = require('axios');
 
   useEffect(() => {
   axios.get('https://api.nasa.gov/planetary/apod?api_key=FjrmJzNeziBJDn5r5sMIcFB4fmw3zwqVbo8VrhB7')
@@ -24,7 +23,7 @@ function App() {
         Read through the instructions in the README.md file to build your NASA
         app! Have fun <span role="img" aria-label='go!'>🚀</span>!
       </p>
-      <Content nasa={nasa}/>
+      {nasa ? <Content nasa={nasa} /> : null}
     </div>
   );
 }
