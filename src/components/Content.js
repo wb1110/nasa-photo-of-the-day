@@ -1,25 +1,39 @@
 import React from "react";
+import styled from 'styled-components';
 
 const Content = (props) => {
 
-    
+    const Wrapper = styled.div`
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    `;
+
+    const DayImage = styled.img`
+        width: 50%;
+    `;
+
+    const Text = styled.p`
+        width: 50%;
+    `;
+
 
     return (
-        <div className='image-containter'>
+        <Wrapper className='image-containter'>
             <h1>
                 {props.nasa.date}
             </h1>
-            <img 
+            <DayImage 
                 alt='of-the-day'
                 src={props.nasa.url}
             />
             <h3>
                 {`${props.nasa.copyright}, ${props.nasa.title}`}
             </h3>
-            <p>
+            <Text>
                 {props.nasa.explanation}
-            </p>
-        </div>
+            </Text>
+        </Wrapper>
         
     );
 };
